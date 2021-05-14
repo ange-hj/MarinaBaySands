@@ -126,7 +126,9 @@ $sc : #e6d6f1;
         li {
             float: left;
             &:last-child a::after {
-                content: '∨';
+                content: '\f103';
+                font-family: 'Line Awesome Free';
+                font-weight: 900;
                 margin-left: 5px;
             }
         }
