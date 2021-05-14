@@ -1,0 +1,650 @@
+@charset "UTF-8";
+@import url(./reset.css);
+
+
+
+$b : #000;
+$w : #fff;
+$lb : lightblue;
+$lp : lightpink;
+$lg : #eee;
+$ddd : #ddd;
+$mc : #c7b3d6;
+$sc : #e6d6f1;
+
+// width 1599px 이상일 경우 
+.wrap {
+    // background: $lg;
+    padding-left: 192px;
+}
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 192px; 
+    padding: 41px 0 30px;
+    // background: $lb;
+
+    .logo {
+        a {
+            display: block;
+            width: 137px;
+            height: 85px;
+            margin: 0 auto;
+            background: url(../../images/slogo.png) 0 0 no-repeat;
+            text-indent: -9999px;
+        }
+    }
+ 
+    .nav-goto {
+        position: absolute;
+        bottom: 20px; left: 0; right: 0;
+        text-align: center;
+        .lst-goto {
+            li {
+                display: inline-block;
+                &:last-child a::after {
+                    display: none;
+                }
+                a {
+                    display: block;
+                    position: relative;
+                    padding: 7px 7px;
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        top: 12px; right: -2px;
+                        display: block;
+                        width: 1px; height: 10px; 
+                        background: $b;
+                    }
+                }
+            }
+        }
+        .lst-sns {
+            li {
+                display: inline-block;
+                &:nth-child(2) a {
+                    background-image: url(../../images/sns-facebook.svg);
+                    &:hover {
+                        background-image: url(../../images/sns-facebook-on.svg);
+                    }
+                }
+                &:nth-child(3) a {
+                    background-image: url(../../images/sns-instagram.svg);
+                    margin: 0 5px;
+                    &:hover {
+                        background-image: url(../../images/sns-instagram-on.svg);
+                    }
+                }
+                &:last-child a {
+                    background-image: url(../../images/sns-youtube.svg);
+                    &:hover {
+                        background-image: url(../../images/sns-youtube-on.svg);
+                    }
+                }
+            }
+            a {
+                display: block;
+                width: 20px; height: 20px; 
+                border-radius: 50%;
+                background-color: $b;
+                background-size: 90% auto;
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+            }
+        }
+    }
+    
+}
+
+#gnb {
+        margin: 76px auto 0;
+
+    ul {
+        li {
+             a {
+                display: block;
+                padding: 8px 0 8px 64px;
+
+                &:hover {
+                        background: $mc;
+                        color: $w;
+                }
+            }
+        }
+    }
+}
+
+.util {
+    height: 40px;
+    background: $b;
+    .col-left {
+        float: left;
+        li {
+            float: left;
+            &:last-child a::after {
+                content: '∨';
+                margin-left: 5px;
+            }
+        }
+    }
+    .col-right {
+        float: right;
+        li {
+            float: left;
+        }
+    }
+    a {
+        display: block;
+        height: 40px;
+        padding: 0 10px;
+        line-height: 3.5em;
+        color: $w;
+        font-size: 0.857em; /* 12px (14px 기준) */
+    }
+}
+
+$width : 20%;
+$height : 25%;
+
+.container {
+    height: calc(100vh - 40px);
+
+    //    background: $ddd;
+    article {
+        position: relative;
+        float: left;
+        width: $width;
+        height: $height;
+        padding: 30px;
+        overflow: hidden;
+        transition: all .5s;
+        h2 {
+            margin-bottom: 5px;
+            font-size: 1.375em;
+            // font-weight: normal;                                                                              
+        }
+        p {
+            opacity: .7;
+        }
+
+        //    border: 1px solid $b; 
+        &:first-child {
+            width: $width * 3;
+            height: $height * 2;
+            background: url(../../images/11.jpg) 0 50% no-repeat;
+            background-size: cover;
+            strong {
+                position: absolute;
+                bottom: 20px; right: 0;
+                color: $w;
+                font-size: 8vw; line-height: 0.7;
+            }
+        }
+
+        &:nth-child(2) {
+            width: $width * 2;
+            background: $w;
+        }
+
+        &:nth-child(3) {
+            background: $mc;
+        }
+
+        &:nth-child(4) {
+            background: url(../../images/6.jpg) 0 100% no-repeat;
+            background-size: cover;
+        }
+
+        &:nth-child(5) {
+            background: url(../../images/13.jpg) 0 100% no-repeat;
+            background-size: cover;
+        }
+
+        &:nth-child(6) {
+            width: $width * 2;
+            background: $w;
+        }
+
+        &:nth-child(7) {
+            background: url(../../images/4.jpg) 0 100% no-repeat;
+            background-size: cover;
+        }
+
+        &:nth-child(8) {
+            background: $w;
+        }
+
+        &:nth-child(9) {
+            width: $width * 2;
+            background: url(../../images/10.jpg) 0 50% no-repeat;
+            background-size: cover;
+        }
+
+        &:nth-child(10) {
+            background: url(../../images/12.jpg) 0 100% no-repeat;
+            background-size: cover;
+        }
+
+        &:nth-child(11) {
+            background: $sc;
+        }
+
+        &:last-child {
+            background: url(../../images/8.jpg) 0 100% no-repeat;
+            background-size: cover;
+        }
+        .la-sync {
+            position: absolute;
+            bottom: -50px; right: -50px;
+            font-size: 17em;
+            color: $w;
+            animation: anisync 5s linear infinite;
+            @keyframes anisync {
+                100% {transform: rotate(360deg);}
+            }
+        }
+    }
+}    
+
+
+    // width 1599px 이하일 경우 ((밑 조건이 없으면 0) 1280<w<1599)
+@media screen and (max-width: 1599px) {
+    .wrap {
+        padding-left: 0;
+    }
+    #header {
+        position: relative;
+        width: 100%; height: 103px;
+        padding: 0;
+        .logo {
+            position: absolute;
+            top: 0; left: 0;
+            height: 100%;
+            a {
+                display: block;
+                width: 234px; height: 46px;
+                margin: 29px 0 0 34px; 
+                background: url(../../images/slogo2.png) 0 0 no-repeat;
+            }
+        }
+        .nav-goto {
+            display: none;
+        }
+    }
+    #gnb {
+        position: absolute;
+        top: 0; right: 0; bottom: 0;
+        margin: 0;
+        ul {
+            margin-right: 10px;
+            li {
+                float: left;
+                a {
+                    position: relative;
+                    display: block;
+                    text-align: center; line-height: 103px;
+                    padding: 0 43px;
+                }
+                &:first-child a::before {
+                    content: '\f594';
+                    font-family: 'Line Awesome Free';
+                    font-weight: 900;
+                    position: absolute;
+                    top: 0; left: 20px;
+                    font-size: 1.3em;
+                }
+                &:nth-child(2) a::before {
+                    content: '\f5c5';
+                    font-family: 'Line Awesome Free';
+                    font-weight: 900;
+                    position: absolute;
+                    top: 0; left: 20px;
+                    font-size: 1.3em;
+                }
+                &:nth-child(3) a::before {
+                    content: '\f64a';
+                    font-family: 'Line Awesome Free';
+                    font-weight: 900;
+                    position: absolute;
+                    top: 0; left: 20px;
+                    font-size: 1.3em;
+                }
+                &:last-child a::before {
+                    content: '\f2e7';
+                    font-family: 'Line Awesome Free';
+                    font-weight: 900;
+                    position: absolute;
+                    top: 0; left: 20px;
+                    font-size: 1.3em;
+                }
+            }
+        }
+    }
+    .util {
+        height: 50px;
+        a {
+            line-height: 50px;
+            padding: 0 17px;
+        }
+    }
+
+
+    $height: 250px;
+
+    .container {
+        overflow: auto;
+        // height의 기본값 auto (기존 지정값을 없애고 싶을 때 적는다)
+        height: auto;
+
+        article {
+            height: $height;
+            h2 {
+                font-size: 1.7em;
+            }
+
+            &:first-child {
+                height: $height * 2;
+            }
+
+            &:nth-child(2) {
+                height: $height;
+            }
+
+            &:nth-child(6) {
+                height: $height;
+            }
+
+            &:nth-child(9) {
+                height: $height;
+            }
+        }
+    }
+
+
+    // .wrap #header {
+    //     position: static;
+    //     width: 100%;
+    //     height: 83px;
+    // }
+}
+
+    // width 1280px 이하일 경우 (0<w<1280)
+@media screen and (max-width: 1280px) {
+    $width: 25%;
+    $height: 250px;
+
+    .wrap {
+        .container {
+            article {
+                width: $width;
+                height: $height;
+
+                &:first-child {
+                    width: $width * 3;
+                    height: $height * 2;
+                    strong {
+                        font-size: 10vw;
+                    }
+                }
+
+                &:nth-child(2) {
+                    width: $width;
+                    color: $mc;
+                }
+
+                &:nth-child(6) {
+                    width: $width * 2;
+                    background: #d0d0d0;
+                }
+
+                &:nth-child(7) {
+                    width: $width * 2;
+                }
+
+                &:nth-child(10) {
+                    width: $width * 2;
+                    background: #b0b0b0;
+                }
+            }
+        }
+    }
+}
+
+    //width 1023px 이하일 경우
+@media screen and (max-width: 1023px) {
+    $width: 33.333%;
+    // $height : 250px;
+
+    .wrap {
+        #gnb {
+            ul li a {
+                padding: 0 45px;
+                &:hover {
+                    background: none;
+                    color: $b;
+                }
+            }
+        }
+        .container {
+            article {
+                width: $width;
+                // height: $height;
+                
+                &:first-child {
+                    width: $width * 3;
+                    height: 400px;
+                    strong {
+                        font-size: 14vw;
+                    }
+                }
+                
+                &:nth-child(2),
+                &:nth-child(6) {
+                    width: $width * 2;
+                    color: #000;
+                    opacity: .7;
+                }
+
+                &:nth-child(4),
+                &:nth-child(7),
+                &:nth-child(10),
+                &:last-child {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+    //width 779px 이하일 경우
+@media screen and (max-width: 779px) {
+    $width: 50%;
+
+    .wrap {
+        #header {
+            height: 80px;
+            .logo {
+                a {
+                    width: 188px;
+                    margin: 20px 0 0 26px;
+                    background-size: contain;
+                }
+            }
+        }
+        #gnb {
+            ul{
+                li {
+                    a {
+                    line-height: 80px;
+                    padding: 0 20px;
+                    &::before {
+                        content: '';
+                    }
+                    }
+                }
+            }
+        }
+        .util {
+            height: 35px;
+            a {
+                height: 35px;
+                line-height: 35px;
+            }
+        }
+        .container {
+            overflow: visible;
+            article {
+
+                &:first-child {
+                    width: $width * 2;
+                    strong {
+                        font-size: 15vw; 
+                    }
+                }
+                &:nth-child(2) {
+                    width: $width * 2;
+                }
+                &:nth-child(3) {
+                    display: none;
+                }
+
+                &:nth-child(n+4) {
+                    /* 4번째 이후 모든 요소 */
+                    width: $width;
+                }
+                &:last-child {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+    //width 639px 이하일 경우
+@media screen and (max-width: 639px) {
+    .wrap {
+        #header {
+            position: relative;
+            height: 120px;
+            .logo {
+                position: absolute;
+                height: auto;
+                top: 18px; left: 50%;
+                transform: translateX(-50%);
+                a {
+                    margin: 0;
+                }
+            }
+        }
+        #gnb {
+            position: absolute;
+            top: 75px; left: 50px;
+            float: none;
+            text-align: center;
+            ul {
+                margin: 0; 
+                li {
+                    a {
+                display: block;
+                height: 40px;
+                line-height: 40px;
+                padding: 0 40px;
+                }
+            }
+        }
+    }
+
+        .util {
+            display: none;
+        }
+
+        .container {
+            height: calc(100vh - 120px);
+
+            article {
+                p {
+                    display: none;
+                }
+
+                // height: 15%;
+                &:first-child {
+                    height: 28%;
+                }
+                &:nth-child(n+2) {
+                    height: 18%;
+                }
+                &:nth-child(2) {
+                    background: $mc;
+                }
+                &:nth-child(6) {
+                    background: $w;
+                }
+            }
+        }
+    }
+}
+
+    //width 479px 이하일 경우
+@media screen and (max-width: 479px) {
+    .wrap {
+        #header {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            width: 70%;
+            height: 80vh;
+            z-index: 1000;
+            transform: translate(-50%, -50%);
+            .logo {
+                margin-bottom: 23px;
+                a {
+                    width: 250px; height: 105px;
+                    background-image: url(../../images/slogo3.png);
+                    background-position: 50% 50%;
+                }
+            }
+        }
+        #gnb {
+            width: 100%;
+            top: 150px; left: auto; bottom: auto; right: auto;
+            ul {
+                li {
+                    float: none;
+                    margin-bottom: 7px;
+                    a {
+                        padding: 5px 40px;
+                        // text-align: left;
+                        background: rgba($b, 0.3); color: $w;
+                        border-radius: 10px;
+                        &:hover {
+                            background: $mc; color: $w;
+                        }
+                    }
+                }
+            }
+        }
+
+        .container {
+            height: 100%;
+
+            article {
+                &:first-child {
+                    height: 100vh;
+                    background: url(../../images/11.jpg) 20% 100% no-repeat;
+                    background-size: cover;
+                    strong {
+                        display: none;
+                    }
+                }
+
+                &:nth-child(n+2) {
+                    display: none;
+                }
+            }
+        }
+    }
+}
